@@ -18,22 +18,18 @@ export default function Cart(props) {
 			.then(res => {
 
 				setCartItems(res.data.items);
+
+				let total = 0;
+
+				cartItems.forEach(item => {
+
+					total += item.sellingPrice;
+				});
+
+				setTotal(total);
 			});
 
 	}, []);
-
-	useEffect(() => {
-
-		let total = 0;
-
-		cartItems.forEach(item => {
-
-			total += item.sellingPrice;
-		});
-
-		setTotal(total);
-
-	}, [cartItems]);
 
 	return (
 		<div className="mainWrapper">
