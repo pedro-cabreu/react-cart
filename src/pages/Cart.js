@@ -29,7 +29,7 @@ export default function Cart(props) {
 				setTotal(total);
 			});
 
-	}, []);
+	}, [cartItems, props.url]);
 
 	return (
 		<div className="mainWrapper">
